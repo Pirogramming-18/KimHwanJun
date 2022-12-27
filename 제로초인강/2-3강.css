@@ -1,0 +1,27 @@
+/* Cascading Style Sheet */
+/* 선택자(selector) */
+
+div#header-center {
+  /*div는 생략가능*/
+  margin: 0px auto;
+  width: 1080px;
+}
+
+div#header-search > h1 {
+  width: 280px;
+  display: inline-block;
+}
+
+/*#header-center h1 {
+      자손 선택자
+  }
+  */
+
+#header-search h2 {
+  display: none;
+}
+
+#header-search fieldset {
+  width: 520px;
+  display: inline-block;
+}
