@@ -1,0 +1,5 @@
+z인덱스와 쌓임맥락 참고자료: 
+https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+
+z인덱스 다룰 때 중요한 점: 부모와 부모, 부모와 자식 간의 z인덱스를 비교할 때 예를 들어 형제 관계의 요소 두 개의 인덱스가
+각각 100, 1 이고 1인 요소의 자식 요소의 인덱스가 1000이면 1000인 요소는 100인 요소를 덮을 수 없음. 
