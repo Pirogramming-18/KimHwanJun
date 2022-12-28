@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+#overlay {
+  background-image: url(./backcolor.png);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+#header_top {
+  padding-top: 20px;
+  vertical-align: middle;
+}
+
+#header_top span {
+  color: white;
+  font-size: 13px;
+}
+
+#header_contents {
+  position: absolute;
+  top: 28px;
+}
+
+#git_logo {
+  background-image: url(./git_logo.png);
+  display: inline-block;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-position: -14px -12px;
+  background-size: 732px 187px;
+  margin-left: 90px;
+  margin-right: 20px;
+}
+
+#under-arrow {
+  background-image: url(./underarrow.png);
+  display: inline-block;
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 18px;
+  background-position: -127px -11px;
+  margin-right: 8px;
+  margin-left: -4px;
+}
+
+#header-team,
+#header-enterprise,
+#header-marketplace {
+  margin-right: 9px;
+}
+
+#search-sign {
+  display: inline-block;
+}
+
+#search-sign fieldset {
+  border: none;
+  position: absolute;
+  right: 173px;
+  top: 23px;
+}
+
+#search-sign fieldset input {
+  height: 30px;
+  width: 200px;
+  border: none;
+  background-color: white;
+  opacity: 0.3;
+  border-radius: 8px;
+}
+
+#search-sign fieldset button {
+  border: none;
+  background: gray;
+  position: absolute;
+  right: 19px;
+  top: 28px;
+  width: 23px;
+  height: 24px;
+  padding: none;
+}
+
+#sign-in {
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  top: 34px;
+  right: 134px;
+  font-size: 13px;
+}
+
+#sign-up {
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  top: 31px;
+  right: 70px;
+  font-size: 12.5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+#main-firstdiv {
+  width: 598px;
+  margin-top: 92px;
+  margin-left: 153px;
+  color: white;
+  font-size: 30px;
+}
+
+#main-firstdiv h1 {
+  margin-left: 40px;
+  letter-spacing: 1px;
+  line-height: 59px;
+}
+
+#main-firstdiv h6 {
+  color: grey;
+  margin-top: -20px;
+  margin-left: 42px;
+  margin-right: 120px;
+  font-size: 17px;
+}
+
+#main-firstdiv span {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: gray;
+}
+
+#main-seconddiv {
+  vertical-align: top;
+  width: 360px;
+  height: 420px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#main-seconddiv ul {
+  list-style: none;
+}
+
+#main-seconddiv ul li {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+#main-seconddiv input {
+  margin-left: 8px;
+  margin-top: 17px;
+  margin-bottom: 13px;
+  height: 31px;
+  width: 307px;
+}
+
+#main-seconddiv-firstdiv {
+  margin-left: -20px;
+}
+
+#main-seconddiv-seconddiv p {
+  font-size: 8.5px;
+  margin-left: 27px;
+  margin-right: 9px;
+}
+
+#first-p {
+  margin-top: -17px;
+}
+
+#second-p {
+  margin-top: 20px;
+}
+#main-seconddiv-seconddiv button {
+  margin-left: 33px;
+  width: 292px;
+  height: 59px;
+}
+
+#main-seconddiv-seconddiv span {
+  color: dodgerblue;
+}
+
+#green-button {
+  background-image: url(./page_image.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 298px;
+  height: 74px;
+  background-position: -688px -368px;
+  background-size: 1219px 678px;
+  position: absolute;
+  right: 195px;
+  top: 348px;
+}
+
+#footer-div {
+  background-color: white;
+  width: 1280px;
+  height: 122px;
+  margin-top: 44px;
+}
+
+#footer-image {
+  background-image: url(./picture.jpg);
+  background-repeat: no-repeat;
+  background-size: 300px;
+  position: absolute;
+  width: 410px;
+  height: 300px;
+  margin-left: 909px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
