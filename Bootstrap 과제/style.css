@@ -1,5 +1,17 @@
 @import "./reset.css";
 
+@media screen and (max-width: 880px) {
+  #media__icon {
+    flex-direction: column !important;
+  }
+  .media__viewport__hightlight {
+    height: 150vh !important;
+  }
+  #gallary {
+    margin-top: -8.5rem !important;
+  }
+}
+
 @media screen and (min-width: 660px) and (max-width: 830px) {
   .gallary__image > div {
     width: 150px !important;
