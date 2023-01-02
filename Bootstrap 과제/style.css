@@ -1,0 +1,103 @@
+@import "./reset.css";
+
+@media screen and (min-width: 660px) and (max-width: 830px) {
+  .gallary__image > div {
+    width: 150px !important;
+    height: 250px !important;
+  }
+}
+
+@media screen and (min-width: 660px) and (max-width: 692px) {
+  .media__viewport__image {
+    height: 150vh !important;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  #media__input {
+    flex-direction: column;
+  }
+  #media__input div {
+    width: 100% !important;
+  }
+  #footer {
+    height: 90vh;
+    padding-top: 4rem !important;
+    margin-top: 0 !important;
+    padding-left: 2rem;
+  }
+  #footer > div {
+    flex-direction: column;
+    justify-content: space-between !important;
+  }
+  #media__tellemail {
+    width: 80vw !important;
+  }
+  #media__subscribe {
+    width: 13.75rem !important;
+  }
+  .footer__column {
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 659px) {
+  .gallary__image {
+    flex-direction: column !important;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: -50px;
+  }
+  .media__viewport__image {
+    height: 200vh !important;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+#about:hover {
+  background-color: #343a40;
+}
+
+#view__port {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#cheerup {
+  width: 70%;
+}
+
+#intro p {
+  padding-right: 25%;
+  padding-left: 25%;
+  line-height: 1.3rem;
+}
+
+#highlights p,
+#contact p {
+  width: 80%;
+}
+
+#gallary {
+  margin-top: -12.5rem;
+}
+
+#footer {
+  margin-top: -7rem;
+  padding-top: 2rem;
+}
+
+.gallary__image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.gallary__image > div {
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+}
