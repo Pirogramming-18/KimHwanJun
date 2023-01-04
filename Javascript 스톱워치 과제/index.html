@@ -103,7 +103,6 @@
         for (let j = 0; j < selected.length; j++) {
           if (selected[j].checked == true) {
             selected[j].parentElement.remove();
-            console.log(j);
           }
         }
       });
@@ -118,7 +117,9 @@
         secondsEL.innerHTML = fillZero(Math.floor(timeGap / 1000)); //변할 때마다 반영
 
         const date = new Date(timeGap);
-        milliSecondsEL.innerHTML = Math.floor(date.getMilliseconds() / 10); //getMilliseconds 함수는 Date객체에 붙여야됨
+        milliSecondsEL.innerHTML = fillZero(
+          Math.floor(date.getMilliseconds() / 10)
+        ); //getMilliseconds 함수는 Date객체에 붙여야됨
         timeFlow = timeGap;
       }
     </script>
