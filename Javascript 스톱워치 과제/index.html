@@ -72,7 +72,6 @@
         const lineContainer = document.createElement("div");
         const newRecordList = document.createElement("li");
         const newRecordButton = document.createElement("input");
-        const newIcon = document.createElement("span");
 
         newRecordList.textContent = `${secondsEL.innerHTML}:${milliSecondsEL.innerHTML}`;
         newRecordButton.setAttribute("class", "check");
@@ -108,6 +107,7 @@
           }
         }
       });
+
       function fillZero(num) {
         return String(num).padStart(2, "0");
       }
