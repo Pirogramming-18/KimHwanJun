@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StopWatch</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/6fbcf91afd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="rowFlex">
+        <i class="fa-solid fa-stopwatch"></i>
+        <p>피로그래밍 스탑워치</p>
+      </div>
+      <div class="columnFlex">
+        <div class="secondBox">
+          <span id="seconds">00</span>
+          <span>:</span>
+          <span id="milliSeconds">00</span>
+        </div>
+        <div class="topButtons">
+          <div>
+            <button id="start">start</button>
+          </div>
+          <div>
+            <button id="stop">stop</button>
+          </div>
+          <div>
+            <button id="reset">reset</button>
+          </div>
+        </div>
+      </div>
+      <div class="recordBox">
+        <button id="selectAll"></button>
+        <p>구간기록</p>
+        <button id="trashButton"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+      <div id="recordContainer"></div>
+    </div>
+    <script>
+      let startTime;
+      let intervalMain;
+      let timeFlow;
+      const startButton = document.querySelector("#start");
+      const stopButton = document.querySelector("#stop");
+      const resetButton = document.querySelector("#reset");
+      const secondsEL = document.querySelector("#seconds");
+      const selectAllButton = document.querySelector("#selectAll");
+      const trashDOM = document.querySelector("#trashButton");
+      const milliSecondsEL = document.querySelector("#milliSeconds");
+      const recordContainerEL = document.querySelector("#recordContainer");
+
+      //start버튼
+      startButton.addEventListener("click", () => {
+        if (timeFlow > 0) {
+          startTime = new Date().getTime() - timeFlow; // 흐른시간만큼 다시 되돌려 주기
+        } else {
+          startTime = new Date().getTime();
+        }
+        intervalMain = setInterval(main, 1);
+      });
+
+      //stop버튼
+      stopButton.addEventListener("click", () => {
+        clearInterval(intervalMain);
+
+        const lineContainer = document.createElement("div");
+        const newRecordList = document.createElement("li");
+        const newRecordButton = document.createElement("input");
+        const newIcon = document.createElement("span");
+
+        newRecordList.textContent = `${secondsEL.innerHTML}:${milliSecondsEL.innerHTML}`;
+        newRecordButton.setAttribute("class", "check");
+        newRecordButton.setAttribute("type", "checkbox");
+
+        recordContainerEL.appendChild(lineContainer);
+        lineContainer.appendChild(newRecordButton);
+        lineContainer.appendChild(newRecordList);
+      });
+
+      //reset버튼
+      resetButton.addEventListener("click", () => {
+        timeFlow = 0; //흐른시간 초기화
+        secondsEL.innerHTML = "00";
+        milliSecondsEL.innerHTML = "00";
+      });
+
+      //selectAll
+      selectAllButton.addEventListener("click", () => {
+        const selectEvery = document.querySelectorAll(".check");
+        for (let i = 0; i < selectEvery.length; i++) {
+          selectEvery[i].checked = true;
+        }
+      });
+
+      //deletion
+      trashDOM.addEventListener("click", () => {
+        const selected = document.querySelectorAll(".check");
+        for (let j = 0; j < selected.length; j++) {
+          if (selected[j].checked == true) {
+            selected[j].parentElement.remove();
+            console.log(j);
+          }
+        }
+      });
+      function fillZero(num) {
+        return String(num).padStart(2, "0");
+      }
+
+      function main() {
+        const pertime = new Date().getTime();
+        const timeGap = pertime - startTime;
+        secondsEL.innerHTML = fillZero(Math.floor(timeGap / 1000)); //변할 때마다 반영
+
+        const date = new Date(timeGap);
+        milliSecondsEL.innerHTML = Math.floor(date.getMilliseconds() / 10); //getMilliseconds 함수는 Date객체에 붙여야됨
+        timeFlow = timeGap;
+      }
+    </script>
+  </body>
+</html>
