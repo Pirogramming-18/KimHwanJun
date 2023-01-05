@@ -1,22 +1,8 @@
 import random
 
 num = 0
-def brGame():
-    call = 0
-    while(True):
-        try:
-            call =random.randint(1,3)
-            if ( not 0<call<4 ):
-                raise Exception("")
-        except ValueError:
-            print("정수를 입력하세요")
-        except Exception:
-            print("1,2,3 중 하나를 입력하세요")
-        else:
-            break;
-    return call
 
-def brGame2():
+def brGame():
     call = 0
     while(True):
         try:
@@ -33,7 +19,7 @@ def brGame2():
 
 while(True):
 
-    add1 = brGame()
+    add1 = random.randint(1,3)
     for i in range(add1):
         print("Computer: {}".format(i+1+num))
 
@@ -42,7 +28,7 @@ while(True):
         print("Computer win!") 
         break;
 
-    add2 = brGame2()
+    add2 = brGame()
     for i in range(add2):
         print("player: {}".format(i+1+num))
 
