@@ -16,6 +16,7 @@ while(True):
         print("playerA: {}".format(i+num+1))
     num = num + callA
     if(num>30):
+        print("playerB win!") 
         break;
 
     while(True):
@@ -34,6 +35,7 @@ while(True):
         print("playerB: {}".format(i+num+1))
     num = num + callB
     if(num>30):
+        print("playerB win!") 
         break;
     
 
