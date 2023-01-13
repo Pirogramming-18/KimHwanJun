@@ -1,0 +1,64 @@
+.detailHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98vw;
+  height: 60px;
+  border-bottom: 1px solid gray;
+}
+
+.detailHeader a {
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.detailHeader a:visited {
+  color: black;
+}
+
+.detailHeader .pageName {
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.pageName span {
+  color: #ff00ff;
+}
+
+.detailContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+}
+
+.detailContainer a {
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+}
+
+.detailContainer a:visited {
+  color: gray;
+}
+
+.detailContainer a:hover {
+  color: green;
+}
+
+.detailContainer input {
+  border: 0px transparent solid;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  color: gray;
+}
+
+.detailContainer input:hover {
+  color: green;
+}

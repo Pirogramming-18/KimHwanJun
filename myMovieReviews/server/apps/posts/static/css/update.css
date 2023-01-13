@@ -1,0 +1,63 @@
+.updateHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98vw;
+  height: 60px;
+  border-bottom: 1px solid gray;
+}
+
+.updateHeader a {
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.updateHeader a:visited {
+  color: black;
+}
+
+.updateHeader a:hover {
+  color: green;
+}
+
+.pageName p {
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.pageName span {
+  color: #ff00ff;
+}
+
+.updateContainer {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.updateContainer > div {
+  display: block;
+}
+
+.updateContainer input {
+  padding: 5px 0;
+}
+
+.movieReview {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.movieReview span {
+  color: #ff00ff;
+}
+
+.submit {
+  display: flex;
+  justify-content: flex-end;
+}

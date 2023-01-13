@@ -1,0 +1,44 @@
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98vw;
+  height: 60px;
+  border-bottom: 1px solid gray;
+}
+
+.reviewHeader a {
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.reviewHeader a:visited,
+.reviewContainer a:visited {
+  color: black;
+}
+
+.reviewHeader a:hover,
+.reviewContainer a:hover {
+  color: green;
+}
+
+.pageName p {
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.pageName span {
+  color: #ff00ff;
+}
+
+.reviewContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.reviewContainer a {
+  text-decoration: none;
+}

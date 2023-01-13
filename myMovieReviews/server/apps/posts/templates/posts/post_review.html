@@ -1,9 +1,35 @@
-<a href="/review/create">Add a New review</a>
-<hr />
-{% for post in posts %}
-<h2><a href="/review/{{post.pk}}">{{post.title}}</a></h2>
-<p>개봉년도: {{post.year}}</p>
-<p>장르: {{post.genre}}</p>
-<p>평점: {{post.rate}}</p>
-<hr />
-{% endfor %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/review.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="reviewHeader">
+        <div class="pageName">
+          <p>my<span>Movie</span>reviews</p>
+        </div>
+        <div>
+          <a href="/review/create">Add a New review</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="reviewContainer">
+        {% for post in posts %}
+        <div>
+          <h2><a href="/review/{{post.pk}}">{{post.title}}</a></h2>
+          <p>개봉년도: {{post.year}}</p>
+          <p>장르: {{post.genre}}</p>
+          <p>평점: {{post.rate}}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+  </body>
+</html>

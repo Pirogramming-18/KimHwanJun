@@ -1,0 +1,22 @@
+a:link,
+a:visited {
+  background-color: green;
+  color: yellow;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  background-color: yellow;
+  color: red;
+}
+
+.mainContainer {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
