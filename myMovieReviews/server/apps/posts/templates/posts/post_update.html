@@ -1,0 +1,16 @@
+<p>리뷰 수정하기</p>
+<br />
+
+<form action="/review/{{post.id}}/update" method="post">
+  {% csrf_token %} 제목: <input name="title" value="{{post.title}}" /><br />
+  개봉년도: <input name="year" type="number" value="{{post.year}}" /><br />
+  장르: <input name="genre" value="{{post.genre}}" /><br />
+  별점: <input name="rate" value="{{post.rate}}" /><br />
+  러닝타임: <input name="runningtime" value="{{post.runningtime}}" /><br />
+  리뷰: <br /><textarea name="content">{{post.content}}</textarea><br />
+  감독: <input name="director" value="{{post.director}}" /><br />
+  배우: <input name="act" value="{{post.act}}" /><br />
+  <div>
+    <input type="submit" value="수정하기" />
+  </div>
+</form>

@@ -1,0 +1,9 @@
+<a href="/review/create">Add a New review</a>
+<hr />
+{% for post in posts %}
+<h2><a href="/review/{{post.pk}}">{{post.title}}</a></h2>
+<p>개봉년도: {{post.year}}</p>
+<p>장르: {{post.genre}}</p>
+<p>평점: {{post.rate}}</p>
+<hr />
+{% endfor %}

@@ -1,0 +1,13 @@
+<form action="/review/create" method="post">
+  {% csrf_token %} 제목: <input name="title" /><br />
+  개봉년도: <input name="year" type="number" /><br />
+  장르: <input name="genre" /><br />
+  별점: <input name="rate" /><br />
+  러닝타임: <input name="runningtime" /><br />
+  리뷰: <br /><textarea name="content"></textarea><br />
+  감독: <input name="director" /><br />
+  배우: <input name="act" /><br />
+  <div>
+    <input type="submit" value="Save" />
+  </div>
+</form>
