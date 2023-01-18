@@ -1,0 +1,17 @@
+.navContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.mainContainer {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.articleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+img {
+  width: 200px;
+  height: 200px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/idea_detail.css' %}" />
+  </head>
+  <body>
+    <nav>
+      <div class="navContainer">
+        <div>
+          <a href="{% url 'posts:register_idea' %}">아이디어 등록</a>
+        </div>
+        <div>
+          <a href="/">아이디어 관리</a>
+        </div>
+        <div>
+          <a href="{% url 'posts:register_tool' %}">개발툴 등록</a>
+        </div>
+        <div>
+          <a href="{% url 'posts:tool_list' %}">개발툴 관리</a>
+        </div>
+      </div>
+    </nav>
+    <div class="detailContainer">
+      <div><span>Idea Detail</span></div>
+      <div class="contentContainer">
+        <div>
+          {% if post.photo %}
+          <p>
+            <img src="{{post.photo.url}}" />
+          </p>
+          {% endif %}
+        </div>
+        <div>
+          <div>{{post.title}}</div>
+          <div>1) 아이디어 관심도:<br />{{post.interest}}</div>
+          <div>
+            2) 예상 개발 툴: <br /><a
+              href="{% url 'posts:tool_detail' post.devtool.pk %}"
+              >{{post.devtool.name}}</a
+            >
+          </div>
+          <div>3) 아이디어 설명: <br />{{post.content}}</div>
+        </div>
+      </div>
+      <div>
+        <form action="{% url 'posts:idea_delete' post.pk %}" method="post">
+          {% csrf_token %}
+          <input type="submit" , value="삭제" />
+        </form>
+        <a href="/">목록</a>
+        <a href="{% url 'posts:idea_update' post.pk %}">수정</a>
+      </div>
+    </div>
+  </body>
+</html>

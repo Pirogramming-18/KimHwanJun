@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/tool_register.css' %}" />
+  </head>
+  <body>
+    <nav>
+      <div class="navContainer">
+        <div>
+          <a href="{% url 'posts:register_idea' %}">아이디어 등록</a>
+        </div>
+        <div>
+          <a href="/">아이디어 관리</a>
+        </div>
+        <div>
+          <a href="{% url 'posts:register_tool' %}">개발툴 등록</a>
+        </div>
+        <div>
+          <a href="{% url 'posts:tool_list' %}">개발툴 관리</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="registerContainer">
+        <div><span>DevTool Register</span></div>
+        <div>
+          <form action="{% url 'posts:register_tool'%}" method="post">
+            {% csrf_token %}
+            <label for="inputName">이름:</label><br />
+            <input name="name" id="inputName" /><br />
+
+            <label for="inputKind">종류:</label><br />
+            <input name="kind" id="inputKind" /><br />
+
+            <label for="inputContent">개발툴 설명:</label><br />
+            <textarea
+              name="content"
+              id="inputContent"
+              cols="30"
+              rows="10"
+            ></textarea
+            ><br />
+            <div>
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

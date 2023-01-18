@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메인</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="{% static 'javascripts/main.js' %}"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="navContainer">
+        <div>
+          <a href="{% url 'posts:register_idea' %}">아이디어 등록</a>
+        </div>
+        <div>
+          <a href="/">아이디어 관리</a>
+        </div>
+        <div>
+          <a href="{% url 'posts:register_tool' %}">개발툴 등록</a>
+        </div>
+        <div>
+          <a href="{% url 'posts:tool_list' %}">개발툴 관리</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="mainContainer">
+        <div><span>Idea List</span></div>
+        <form action="" method="get" id="arrange">
+          <select name="arrange" id="arrange">
+            <option value="">--정렬기준--</option>
+            <option value="star">찜하기순</option>
+            <option value="register">등록순</option>
+            <option value="current">최신순</option>
+            <option value="title">이름순</option>
+          </select>
+        </form>
+        <div class="articleContainer">
+          {% for post in posts %}
+          <article>
+            {% if post.photo %}
+            <p>
+              <img src="{{post.photo.url}}" />
+            </p>
+            {% endif %}
+            <div>
+              <p>
+                <a href="{% url 'posts:idea_detail' post.pk %}"
+                  >{{post.title}}</a
+                >
+              </p>
+            </div>
+            <div>예상 개발 툴: {{post.devtool.name}}</div>
+            <div>
+              아이디어 관심도:
+              <form action="{% url 'posts:main'%}" method="post">
+                {% csrf_token %}
+                <input type="submit" name="minus_btn" value="-" />
+                {{post.interest}}
+                <input type="submit" name="plus_btn" value="+" />
+              </form>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
