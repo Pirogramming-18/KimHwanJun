@@ -1,0 +1,13 @@
+button {
+  all: unset;
+}
+
+i {
+  color: red;
+}
+
+.create__comment,
+.del__comment {
+  border: 1px solid black;
+  border-radius: 20%;
+}
